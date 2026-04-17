@@ -4,9 +4,9 @@ A test suite used for the internal validation of TASTE SAMRH71 RTEMS Runtime, cr
 
 The repository organization is as follows:
 - tests/* - contains folders with TASTE projects
-- scripts/* - helper scripts that need to be copied/installed in the test environment
+- (TODO) scripts/* - helper scripts that need to be copied/installed in the test environment
 - Makefile - main entry point to launch the 50+ tests and generate reports
-- traces.csv - CSV file with requirement to test mapping
+- (TODO) traces.csv - CSV file with requirement to test mapping
 
 # Test environment setup
 
