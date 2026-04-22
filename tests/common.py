@@ -16,11 +16,11 @@ def target_extended_reset(gdbmi: GdbController) -> None:
 
     The purpose of this sequence is to eliminate spurious errors.
     """
-    gdbmi.write("monitor reset")  # ordinary reset
-    gdbmi.write("monitor reset 0")  # core & peripherals via SYSRESETREQ & VECTRESET bit
-    gdbmi.write("monitor reset 1")  # the core only, not peripherals
-    gdbmi.write("monitor reset 8")  # core & peripherals via SYSRESETREQ bit only
-    gdbmi.write("monitor reset")  # ordinary reset
+    gdbmi.write("monitor reset", timeout_sec=2)  # ordinary reset
+    gdbmi.write("monitor reset 0", timeout_sec=2)  # core & peripherals via SYSRESETREQ & VECTRESET bit
+    gdbmi.write("monitor reset 1", timeout_sec=2)  # the core only, not peripherals
+    gdbmi.write("monitor reset 8", timeout_sec=2)  # core & peripherals via SYSRESETREQ bit only
+    gdbmi.write("monitor reset", timeout_sec=2)  # ordinary reset
 
 
 def do_build(test_name, arguments):

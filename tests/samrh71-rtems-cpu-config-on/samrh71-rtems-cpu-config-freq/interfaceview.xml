@@ -1,0 +1,47 @@
+<InterfaceView version="1.3" asn1file="samrh71-rtems-cpu-config-freq.acn" UiFile="interfaceview.ui.xml" modifierHash="383508e">
+<Function id="{9a862d44-5862-4ccd-82c8-de9e8fc72163}" name="ponger" is_type="NO" language="C" default_implementation="default" fixed_system_element="NO" required_system_element="NO" instances_max="1" startup_priority="1" instances_min="1">
+    <Property name="TASTE_IV_Properties::Default_Codegen" value="Ada"/>
+<Provided_Interface id="{f8aa702a-557f-4efd-bfe7-ff1a9400022a}" name="ping" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" wcet="0" miat="0" queue_size="1" priority="1" stack_size="1024">
+</Provided_Interface>
+
+<Required_Interface id="{2c118e3b-ee70-4fc5-aa09-aa4b6c4d4578}" name="pong" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" wcet="0" miat="0" queue_size="1" priority="1" stack_size="1024">
+    <Property name="Taste::InheritPI" value="true"/>
+    <Property name="Taste::Autonamed" value="true"/>
+</Required_Interface>
+
+    <Implementations>
+        <Implementation name="default" language="C"/>
+    </Implementations>
+</Function>
+
+<Function id="{de67fcbd-167c-49b0-bf27-57707fddb432}" name="pinger" is_type="NO" language="C" default_implementation="default" fixed_system_element="NO" required_system_element="NO" instances_max="1" startup_priority="1" instances_min="1">
+    <Property name="TASTE_IV_Properties::Default_Codegen" value="Ada"/>
+<Provided_Interface id="{f4c97928-d662-415c-8e5f-bdf8f3138dad}" name="pong" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" wcet="0" miat="0" queue_size="1" priority="1" stack_size="1024">
+</Provided_Interface>
+
+<Provided_Interface id="{08981261-f77a-4bed-a09f-87c802fe62ab}" name="trigger" kind="Cyclic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" wcet="0" priority="1" stack_size="1024">
+</Provided_Interface>
+
+<Required_Interface id="{27fb8b02-1e46-4c90-8f8a-b00b11bdb976}" name="ping" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" wcet="0" miat="0" queue_size="1" priority="1" stack_size="1024">
+    <Property name="Taste::InheritPI" value="true"/>
+    <Property name="Taste::Autonamed" value="true"/>
+</Required_Interface>
+
+    <Implementations>
+        <Implementation name="default" language="C"/>
+    </Implementations>
+</Function>
+
+<Connection id="{e0d65713-3fe5-4399-a36d-6db11c50ed18}" name="ponger_pong____pinger_pong" required_system_element="NO">
+    <Source iface_id="{2c118e3b-ee70-4fc5-aa09-aa4b6c4d4578}" func_name="ponger" ri_name="pong" />
+    <Target iface_id="{f4c97928-d662-415c-8e5f-bdf8f3138dad}" func_name="pinger" pi_name="pong" />
+</Connection>
+
+<Connection id="{8f8959a1-1cc3-4e3a-bcbc-0b52c437f6d2}" name="pinger_ping____ponger_ping" required_system_element="NO">
+    <Source iface_id="{27fb8b02-1e46-4c90-8f8a-b00b11bdb976}" func_name="pinger" ri_name="ping" />
+    <Target iface_id="{f8aa702a-557f-4efd-bfe7-ff1a9400022a}" func_name="ponger" pi_name="ping" />
+</Connection>
+
+<Layer name="default" is_visible="true"/>
+
+</InterfaceView>
