@@ -13,10 +13,8 @@
 
 void pinger_startup(void)
 {
-   // Write your initialisation code
-   // You may call sporadic required interfaces and start timers
-   // puts ("[pinger] Startup");
 }
+
 static bool test_result = false;
 
 static void pinger_trap()
