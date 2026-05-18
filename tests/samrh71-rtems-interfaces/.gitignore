@@ -1,0 +1,44 @@
+# Ignore whole work directory
+work/*
+
+# Except work/system.asn
+!work/system.asn
+
+# Ignore qt creator cache directory
+.qtc_clangd
+
+# Ignore qt creator user files
+*.pro.user*
+
+# Ignore aadl files
+*.aadl
+
+# Ignore msc files
+*.msc
+
+# Except MOCK source files
+!work/mock
+work/mock/*
+!work/mock/C
+work/mock/C/*
+!work/mock/C/src
+work/mock/C/src/*
+!work/mock/C/src/mock.c
+
+# Except TRIGGER source files
+!work/trigger
+work/trigger/*
+!work/trigger/C
+work/trigger/C/*
+!work/trigger/C/src
+work/trigger/C/src/*
+!work/trigger/C/src/trigger.c
+
+# Except TESTFUNCTION source files
+!work/testfunction
+work/testfunction/*
+!work/testfunction/C
+work/testfunction/C/*
+!work/testfunction/C/src
+work/testfunction/C/src/*
+!work/testfunction/C/src/testfunction.c

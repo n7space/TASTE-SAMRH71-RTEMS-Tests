@@ -1,0 +1,11 @@
+SAMRH71-RTEMS-INTERFACES-DATAVIEW DEFINITIONS ::= BEGIN
+
+   MyInteger [encoding pos-int, endianness big, size 16]
+
+   MySeq [] {
+      input-data  [],
+      output-data [],
+      validity []
+   }
+END
+
