@@ -1,0 +1,215 @@
+# Ignore whole work directory
+work/*
+
+# Except work/system.asn
+!work/system.asn
+
+# Ignore qt creator cache directory
+.qtc_clangd
+
+# Ignore qt creator user files
+*.pro.user*
+
+# Ignore aadl files
+*.aadl
+
+# Ignore msc files
+*.msc
+
+# Except TESTFUNCTION source files
+!work/testfunction
+work/testfunction/*
+!work/testfunction/C
+work/testfunction/C/*
+!work/testfunction/C/src
+work/testfunction/C/src/*
+!work/testfunction/C/src/testfunction.c
+
+# Except TESTTRIGGER source files
+!work/testtrigger
+work/testtrigger/*
+!work/testtrigger/C
+work/testtrigger/C/*
+!work/testtrigger/C/src
+work/testtrigger/C/src/*
+!work/testtrigger/C/src/testtrigger.c
+
+# Except FUNCTION_1 source files
+!work/function_1
+work/function_1/*
+!work/function_1/C
+work/function_1/C/*
+!work/function_1/C/src
+work/function_1/C/src/*
+!work/function_1/C/src/function_1.c
+
+# Except FUNCTION_2 source files
+!work/function_2
+work/function_2/*
+!work/function_2/C
+work/function_2/C/*
+!work/function_2/C/src
+work/function_2/C/src/*
+!work/function_2/C/src/function_2.c
+
+# Except FUNCTION_3 source files
+!work/function_3
+work/function_3/*
+!work/function_3/C
+work/function_3/C/*
+!work/function_3/C/src
+work/function_3/C/src/*
+!work/function_3/C/src/function_3.c
+
+# Except FUNCTION_4 source files
+!work/function_4
+work/function_4/*
+!work/function_4/C
+work/function_4/C/*
+!work/function_4/C/src
+work/function_4/C/src/*
+!work/function_4/C/src/function_4.c
+
+# Except FUNCTION_5 source files
+!work/function_5
+work/function_5/*
+!work/function_5/C
+work/function_5/C/*
+!work/function_5/C/src
+work/function_5/C/src/*
+!work/function_5/C/src/function_5.c
+
+# Except FUNCTION_6 source files
+!work/function_6
+work/function_6/*
+!work/function_6/C
+work/function_6/C/*
+!work/function_6/C/src
+work/function_6/C/src/*
+!work/function_6/C/src/function_6.c
+
+# Except FUNCTION_7 source files
+!work/function_7
+work/function_7/*
+!work/function_7/C
+work/function_7/C/*
+!work/function_7/C/src
+work/function_7/C/src/*
+!work/function_7/C/src/function_7.c
+
+# Except FUNCTION_8 source files
+!work/function_8
+work/function_8/*
+!work/function_8/C
+work/function_8/C/*
+!work/function_8/C/src
+work/function_8/C/src/*
+!work/function_8/C/src/function_8.c
+
+# Except FUNCTION_9 source files
+!work/function_9
+work/function_9/*
+!work/function_9/C
+work/function_9/C/*
+!work/function_9/C/src
+work/function_9/C/src/*
+!work/function_9/C/src/function_9.c
+
+# Except FUNCTION_10 source files
+!work/function_10
+work/function_10/*
+!work/function_10/C
+work/function_10/C/*
+!work/function_10/C/src
+work/function_10/C/src/*
+!work/function_10/C/src/function_10.c
+
+# Except FUNCTION_11 source files
+!work/function_11
+work/function_11/*
+!work/function_11/C
+work/function_11/C/*
+!work/function_11/C/src
+work/function_11/C/src/*
+!work/function_11/C/src/function_11.c
+
+# Except FUNCTION_12 source files
+!work/function_12
+work/function_12/*
+!work/function_12/C
+work/function_12/C/*
+!work/function_12/C/src
+work/function_12/C/src/*
+!work/function_12/C/src/function_12.c
+
+# Except FUNCTION_13 source files
+!work/function_13
+work/function_13/*
+!work/function_13/C
+work/function_13/C/*
+!work/function_13/C/src
+work/function_13/C/src/*
+!work/function_13/C/src/function_13.c
+
+# Except FUNCTION_14 source files
+!work/function_14
+work/function_14/*
+!work/function_14/C
+work/function_14/C/*
+!work/function_14/C/src
+work/function_14/C/src/*
+!work/function_14/C/src/function_14.c
+
+# Except FUNCTION_15 source files
+!work/function_15
+work/function_15/*
+!work/function_15/C
+work/function_15/C/*
+!work/function_15/C/src
+work/function_15/C/src/*
+!work/function_15/C/src/function_15.c
+
+# Except FUNCTION_16 source files
+!work/function_16
+work/function_16/*
+!work/function_16/C
+work/function_16/C/*
+!work/function_16/C/src
+work/function_16/C/src/*
+!work/function_16/C/src/function_16.c
+
+# Except FUNCTION_17 source files
+!work/function_17
+work/function_17/*
+!work/function_17/C
+work/function_17/C/*
+!work/function_17/C/src
+work/function_17/C/src/*
+!work/function_17/C/src/function_17.c
+
+# Except FUNCTION_18 source files
+!work/function_18
+work/function_18/*
+!work/function_18/C
+work/function_18/C/*
+!work/function_18/C/src
+work/function_18/C/src/*
+!work/function_18/C/src/function_18.c
+
+# Except FUNCTION_19 source files
+!work/function_19
+work/function_19/*
+!work/function_19/C
+work/function_19/C/*
+!work/function_19/C/src
+work/function_19/C/src/*
+!work/function_19/C/src/function_19.c
+
+# Except FUNCTION_20 source files
+!work/function_20
+work/function_20/*
+!work/function_20/C
+work/function_20/C/*
+!work/function_20/C/src
+work/function_20/C/src/*
+!work/function_20/C/src/function_20.c
