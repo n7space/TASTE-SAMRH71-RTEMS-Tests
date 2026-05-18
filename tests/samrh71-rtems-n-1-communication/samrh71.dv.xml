@@ -1,0 +1,18 @@
+<DeploymentView version="1.2" UiFile="samrh71.ui.xml" creatorHash="383508e" modifierHash="383508e">
+    <Node id="{3eaa0451-e9c4-469d-b8ec-3a0eb6de8cee}" name="SAM RH71 RTEMS N7S_1" type="ocarina_processors_arm::samrh71.rtems" node_label="Node_1" namespace="ocarina_processors_arm">
+        <Partition id="{ae521692-6545-438c-8254-ba5f60a4b7ec}" name="Partition_1">
+            <Function id="{7e1a0492-76d1-4151-a68d-e664073ee3d7}" name="Function_6" path="Function_6"/>
+            <Function id="{81806bee-fa6d-430c-a1b2-921931012485}" name="Function_10" path="Function_10"/>
+            <Function id="{15a1a00e-1cbd-4b6d-bfe7-841d993fd55b}" name="Function_11" path="Function_11"/>
+            <Function id="{03e3431c-73ee-4d54-9ab2-6d6f5903ae9b}" name="Function_4" path="Function_4"/>
+            <Function id="{a9bf6c50-f48d-4c68-a58d-9ede7dc1e4c9}" name="testfunction" path="testfunction"/>
+            <Function id="{f4b8c3a6-0f53-4269-a312-a3b567cff43a}" name="Function_3" path="Function_3"/>
+            <Function id="{179e3906-2ac5-4ccf-b3fb-6f4a70db26c7}" name="Function_7" path="Function_7"/>
+            <Function id="{268f4958-2649-4d9f-a63a-5475033a5f63}" name="Function_5" path="Function_5"/>
+            <Function id="{b1f5c8a0-fc84-469a-8948-75b9618538da}" name="triggerfunction" path="triggerfunction"/>
+            <Function id="{e52061c6-13b3-4e9c-970c-1346cad0195e}" name="Function_9" path="Function_9"/>
+            <Function id="{a068178f-81f4-42a5-8e50-4b134f70fa39}" name="Function_8" path="Function_8"/>
+            <Function id="{72aea53d-a037-40c2-97bf-f7ca090fd23c}" name="Function_2" path="Function_2"/>
+        </Partition>
+    </Node>
+</DeploymentView>
