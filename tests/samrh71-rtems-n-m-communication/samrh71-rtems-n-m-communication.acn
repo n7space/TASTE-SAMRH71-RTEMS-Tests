@@ -1,0 +1,6 @@
+SAMRH71-RTEMS-N-M-COMMUNICATION-DATAVIEW DEFINITIONS ::= BEGIN
+
+   MyInteger [encoding pos-int, endianness big, size 16]
+
+END
+
