@@ -1,0 +1,23 @@
+# Ignore whole work directory
+work/*
+
+# Except work/system.asn
+!work/system.asn
+
+# Ignore qt creator cache directory
+.qtc_clangd
+
+# Ignore qt creator user files
+*.pro.user*
+
+# Ignore aadl files
+*.aadl
+
+# Except FUNCTION_1 source files
+!work/function_1
+work/function_1/*
+!work/function_1/C
+work/function_1/C/*
+!work/function_1/C/src
+work/function_1/C/src/*
+!work/function_1/C/src/function_1.c
