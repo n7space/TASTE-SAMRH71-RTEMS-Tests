@@ -1,0 +1,6 @@
+SAMRH71-VERIFY-FAULT-DATAVIEW DEFINITIONS ::= BEGIN
+
+   MyInteger [encoding pos-int, endianness big, size 16]
+
+END
+
