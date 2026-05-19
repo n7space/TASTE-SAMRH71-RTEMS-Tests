@@ -45,6 +45,7 @@ void testfunction_PI_trigger_check(void)
     status = status && (rtems_task_get_priority(threads_info[testfunction_cyclic_if_2].id, scheduler_id, &priority_2) == RTEMS_SUCCESSFUL);
 
     test_result = status && priority_1 == CYCLIC_IF_1_PRIORITY && priority_2 == CYCLIC_IF_2_PRIORITY;
+    asm volatile("nop");
 }
 
 
