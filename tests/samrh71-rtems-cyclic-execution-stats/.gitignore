@@ -31,14 +31,14 @@ work/function_2/C/*
 work/function_2/C/src/*
 !work/function_2/C/src/function_2.c
 
-# Except MONITOR_TICK source files
-!work/monitor_tick
-work/monitor_tick/*
-!work/monitor_tick/C
-work/monitor_tick/C/*
-!work/monitor_tick/C/src
-work/monitor_tick/C/src/*
-!work/monitor_tick/C/src/monitor_tick.c
+# Except MONITORTICK source files
+!work/monitortick
+work/monitortick/*
+!work/monitortick/C
+work/monitortick/C/*
+!work/monitortick/C/src
+work/monitortick/C/src/*
+!work/monitortick/C/src/monitortick.c
 
 # Except TESTFUNCTION source files
 !work/testfunction
