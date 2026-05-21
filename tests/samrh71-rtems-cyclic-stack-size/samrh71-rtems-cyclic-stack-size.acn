@@ -1,0 +1,6 @@
+SAMRH71-CYCLIC-STACK-SIZE-DATAVIEW DEFINITIONS ::= BEGIN
+
+   MyInteger [encoding pos-int, endianness big, size 16]
+
+END
+
