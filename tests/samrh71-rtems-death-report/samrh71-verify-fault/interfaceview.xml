@@ -1,0 +1,14 @@
+<InterfaceView version="1.3" asn1file="samrh71-verify-fault.acn" UiFile="interfaceview.ui.xml" modifierHash="383508e">
+<Function id="{f90f2332-0043-4ac0-8d94-e27fa5db39e6}" name="Function_1" is_type="NO" language="C" default_implementation="default" fixed_system_element="NO" required_system_element="NO" startup_priority="1" instances_max="1" instances_min="1">
+    <Property name="TASTE_IV_Properties::Default_Codegen" value="Ada"/>
+<Provided_Interface id="{659fd8fa-ec9c-420a-8984-9a9518607580}" name="trigger" kind="Cyclic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" priority="1" stack_size="1024" wcet="0">
+</Provided_Interface>
+
+    <Implementations>
+        <Implementation name="default" language="C"/>
+    </Implementations>
+</Function>
+
+<Layer name="default" is_visible="true"/>
+
+</InterfaceView>
