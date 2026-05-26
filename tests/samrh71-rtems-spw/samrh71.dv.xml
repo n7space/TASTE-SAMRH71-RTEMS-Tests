@@ -1,0 +1,24 @@
+<DeploymentView version="1.2" UiFile="samrh71.ui.xml" creatorHash="ff094fad9" modifierHash="383508e">
+    <Node id="{a96529e4-edd3-4a0a-9932-242417a8e7e3}" name="SAM RH71 RTEMS N7S_1" type="ocarina_processors_arm::samrh71.rtems" node_label="Node_1" namespace="ocarina_processors_arm">
+        <Partition id="{4fc687c6-aa04-42d9-a7e5-92cab041c1d9}" name="Partition_1">
+            <Function id="{1fd4288a-5b90-4492-bbb4-2730e3dc8825}" name="pinger" path="pinger"/>
+        </Partition>
+        <Device id="{62fd9381-bc19-4516-a373-04fb0c3c990b}" name="spw0" requires_bus_access="ocarina_buses::spacewire.generic" config="{ link-id  spw1, node-id  32, link-speed  b2Mbit, remove-prot-id  FALSE }" port="spw0" asn1file="/home/taste/tool-inst/include/TASTE-SAMRH71-RTEMS-Drivers/configurations/samrh71-rtems-spw-driver.asn" asn1type="Spw-SamRH71-Rtems-Conf-T" asn1module="SAMRH71-RTEMS-SPW-DRIVER" extends="ocarina_drivers::spacewire_generic" namespace="ocarina_drivers" bus_namespace="ocarina_buses" impl_extends="ocarina_drivers::spacewire_generic.samrh71">
+        </Device>
+        <Device id="{6ab2034a-fded-4c3f-86a0-31d70bf540af}" name="spw1" requires_bus_access="ocarina_buses::spacewire.generic" port="spw1" asn1file="/home/taste/tool-inst/include/TASTE-SAMRH71-RTEMS-Drivers/configurations/samrh71-rtems-spw-driver.asn" asn1type="Spw-SamRH71-Rtems-Conf-T" asn1module="SAMRH71-RTEMS-SPW-DRIVER" extends="ocarina_drivers::spacewire_generic" namespace="ocarina_drivers" bus_namespace="ocarina_buses" impl_extends="ocarina_drivers::spacewire_generic.samrh71">
+        </Device>
+    </Node>
+    <Node id="{c0cc9921-91a1-48f9-8ebc-169a558f50ae}" name="SAM RH71 RTEMS N7S_2" type="ocarina_processors_arm::samrh71.rtems" node_label="Node_2" namespace="ocarina_processors_arm">
+        <Partition id="{862e14e6-f391-400c-a765-a577550e179d}" name="Partition_2">
+            <Function id="{15ca3818-41dd-4ef5-9cb9-31b0a2ed2aac}" name="ponger" path="ponger"/>
+        </Partition>
+        <Device id="{b8abd003-3a8b-4b5c-8f38-f9710a3f302c}" name="spw0" requires_bus_access="ocarina_buses::spacewire.generic" config="{ link-id  spw1, node-id  33, link-speed  b2Mbit, remove-prot-id  FALSE }" port="spw0" asn1file="/home/taste/tool-inst/include/TASTE-SAMRH71-RTEMS-Drivers/configurations/samrh71-rtems-spw-driver.asn" asn1type="Spw-SamRH71-Rtems-Conf-T" asn1module="SAMRH71-RTEMS-SPW-DRIVER" extends="ocarina_drivers::spacewire_generic" namespace="ocarina_drivers" bus_namespace="ocarina_buses" impl_extends="ocarina_drivers::spacewire_generic.samrh71">
+        </Device>
+        <Device id="{b207a086-0107-4d21-8ce5-4a846fc2e015}" name="spw1" requires_bus_access="ocarina_buses::spacewire.generic" port="spw1" asn1file="/home/taste/tool-inst/include/TASTE-SAMRH71-RTEMS-Drivers/configurations/samrh71-rtems-spw-driver.asn" asn1type="Spw-SamRH71-Rtems-Conf-T" asn1module="SAMRH71-RTEMS-SPW-DRIVER" extends="ocarina_drivers::spacewire_generic" namespace="ocarina_drivers" bus_namespace="ocarina_buses" impl_extends="ocarina_drivers::spacewire_generic.samrh71">
+        </Device>
+    </Node>
+    <Connection id="{af5b8b7c-08c6-4931-8fc6-4aa34b35b47b}" name="Connection_1" from_node="SAM RH71 RTEMS N7S_1" from_port="spw0" to_bus="ocarina_buses::spacewire.generic" to_node="SAM RH71 RTEMS N7S_2" to_port="spw0">
+            <Message id="{2b3c98e9-e729-425a-9c13-bf3e24f2f633}" name="Message_3" from_function="pinger" from_interface="ping" to_function="ponger" to_interface="ping"/>
+            <Message id="{2f270133-7b92-41d1-a90a-1014cafbef8a}" name="Message_4" from_function="ponger" from_interface="pong" to_function="pinger" to_interface="pong"/>
+    </Connection>
+</DeploymentView>

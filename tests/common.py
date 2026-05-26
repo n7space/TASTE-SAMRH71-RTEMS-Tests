@@ -4,6 +4,7 @@
 import subprocess
 import os
 import io
+import time
 import pexpect
 import signal
 import pytest
@@ -153,6 +154,53 @@ def do_execute(test_name, expected, timeout=10, test_exe="test_binaries.sh"):
 
     do_kill_process(process)
     return errors
+
+
+def do_continue_and_verify(
+    gdbmi,
+    test_result_var_name="test_result",
+    total_timeout_sec=10,
+    poll_timeout_sec=1,
+):
+    """Continue a halted target and wait for the breakpoint, then read the result.
+
+    gdbmi                -- GdbController
+    test_result_var_name -- name of the C variable that holds the boolean result
+    total_timeout_sec    -- wall-clock deadline (seconds) to wait for the breakpoint
+    poll_timeout_sec     -- per-call timeout passed to get_gdb_response()
+    """
+    try:
+        responses = gdbmi.write("continue", timeout_sec=5, raise_error_on_timeout=False)
+        stopped = any(
+            msg["type"] == "notify" and msg["message"] == "stopped"
+            for msg in responses
+        )
+
+        deadline = time.monotonic() + total_timeout_sec
+        while not stopped and time.monotonic() < deadline:
+            responses = gdbmi.get_gdb_response(
+                timeout_sec=poll_timeout_sec, raise_error_on_timeout=False
+            )
+            for msg in responses:
+                if msg["type"] == "notify" and msg["message"] == "stopped":
+                    stopped = True
+
+        if not stopped:
+            raise TimeoutError(
+                f"Debugger did not stop within {total_timeout_sec} seconds"
+            )
+
+        test_result = gdbmi.write(f"-data-evaluate-expression {test_result_var_name}")
+        value = None
+        for msg in test_result:
+            if msg["type"] == "result" and msg["message"] == "done":
+                payload = msg.get("payload", {})
+                if "value" in payload:
+                    value = payload["value"]
+
+        assert value == "true", f"Test execution errors: \n test_result = {value}"
+    finally:
+        gdbmi.exit()
 
 
 def run_verification_project(
