@@ -6,8 +6,8 @@ import time
 import os
 from pygdbmi.gdbcontroller import GdbController
 
-REMOTE_PINGER_GDB_SERVER = "100.124.226.3:2331"
-REMOTE_PONGER_GDB_SERVER = "100.116.197.30:2331"
+REMOTE_PINGER_GDB_SERVER = os.getenv("SAMRH71_REMOTE_GDBSERVER", default="127.0.0.1")
+REMOTE_PONGER_GDB_SERVER = os.getenv("SAMRH71_REMOTE_GDBSERVER_2", default="127.0.0.2")
 PINGER_PARTITION_PATH = 'samrh71-rtems-spw/work/binaries/partition_1'
 PONGER_PARTITION_PATH = 'samrh71-rtems-spw/work/binaries/partition_2'
 

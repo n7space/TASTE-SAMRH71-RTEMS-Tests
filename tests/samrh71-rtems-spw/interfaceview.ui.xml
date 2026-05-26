@@ -6,9 +6,9 @@
 </Taste>
 </Entity><Entity id="{bb5236e2-9e20-4b95-885c-48f4db9eb254}"><Taste coordinates="54000 41700">
 </Taste>
-</Entity><Entity id="{f729c4ce-bad6-4564-94a6-733fd483d9e4}"><Taste coordinates="54500 41700 67500 41700 67500 38700 80700 38700">
-</Taste>
 </Entity><Entity id="{8efaf664-5997-4561-82c5-ce888fa54ea0}"><Taste coordinates="80500 43000 67500 43000 67500 45800 54300 45800">
+</Taste>
+</Entity><Entity id="{f729c4ce-bad6-4564-94a6-733fd483d9e4}"><Taste coordinates="54500 41700 67500 41700 67500 38700 80700 38700">
 </Taste>
 </Entity><Entity id="{8e48fd65-910d-49f8-b33f-10b75f8d5fd4}"><Taste coordinates="81000 37000 101000 45000">
 </Taste>

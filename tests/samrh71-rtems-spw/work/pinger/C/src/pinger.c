@@ -21,16 +21,16 @@ asn1SccMySeq spw_data;
 
 void pinger_startup(void)
 {
-  spw_data.id = 42;
-  spw_data.destination_id = 45;
+  // Dummy data for test purpose
+  spw_data.test_id = 42;
+  spw_data.test_destination_id = 45;
   for(uint32_t i = 0; i < DATA_SIZE; i++){
-    spw_data.data.arr[i] = 0xDE;
+    spw_data.test_data.arr[i] = 0xDE;
   }
 }
 
 void pinger_PI_trigger(void)
 {
-  rtems_task_wake_after(50);
   pinger_RI_ping(&spw_data);
 }
 
@@ -38,12 +38,12 @@ void pinger_PI_pong(const asn1SccMySeq *IN_PI_1)
 {
   packet_ok = true;
 
-  if(IN_PI_1->id != 47 || IN_PI_1->destination_id != 50){
+  if(IN_PI_1->test_id != 47 || IN_PI_1->test_destination_id != 50){
     packet_ok = false;
   }
 
   for(uint32_t i = 0; i < DATA_SIZE; i++){
-    if(IN_PI_1->data.arr[i] != 0x13){
+    if(IN_PI_1->test_data.arr[i] != 0x13){
       packet_ok = false;
     }
   }

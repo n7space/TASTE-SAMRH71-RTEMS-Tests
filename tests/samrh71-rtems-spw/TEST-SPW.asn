@@ -5,9 +5,9 @@ BEGIN
   MyOctStr    ::= OCTET STRING (SIZE (8192))
 
   MySeq       ::= SEQUENCE {
-      id             MyInteger,
-      destination-id MyInteger,
-      data           MyOctStr
+      test-id             MyInteger,
+      test-destination-id MyInteger,
+      test-data           MyOctStr
   }
 
 END

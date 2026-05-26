@@ -14,8 +14,6 @@
 #define DATA_SIZE 8192U
 
 asn1SccMySeq new_data;
-volatile uint32_t i = 0;
-volatile uint32_t counter = 0;
 
 void ponger_startup(void)
 {
@@ -23,21 +21,16 @@ void ponger_startup(void)
 
 void ponger_PI_ping(const asn1SccMySeq *IN_PI_1)
 {
-  while(i < 10000)
-  {
-    i++;
-  }
-
-  new_data.id = IN_PI_1->id + 5;
-  new_data.destination_id = IN_PI_1->destination_id + 5;
+  // Dummy data processing for test purpose
+  new_data.test_id = IN_PI_1->test_id + 5;
+  new_data.test_destination_id = IN_PI_1->test_destination_id + 5;
 
   for(uint32_t i = 0; i < DATA_SIZE; i++){
-    if(IN_PI_1->data.arr[i] == 0xDE){
-      new_data.data.arr[i] = 0x13;
+    if(IN_PI_1->test_data.arr[i] == 0xDE){
+      new_data.test_data.arr[i] = 0x13;
     }
   }
 
-  counter++;
   ponger_RI_pong(&new_data);
 }
 
