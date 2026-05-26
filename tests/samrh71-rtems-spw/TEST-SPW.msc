@@ -1,0 +1,12 @@
+mscdocument TEST-SPW /* MSC AND */;
+    language ASN.1;
+    data TEST-SPW.asn;
+
+/* CIF MSCDOCUMENT (0, 0) (4200, 2300) */
+
+mscdocument Nominal /* MSC LEAF */;
+
+msc TEST-SPW;
+endmsc;
+endmscdocument;
+endmscdocument;

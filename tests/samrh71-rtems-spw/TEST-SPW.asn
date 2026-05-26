@@ -1,0 +1,14 @@
+TEST-SPW-DATAVIEW DEFINITIONS ::=
+BEGIN
+
+  MyInteger ::= INTEGER (0 .. 10000)
+  MyOctStr    ::= OCTET STRING (SIZE (8192))
+
+  MySeq       ::= SEQUENCE {
+      id             MyInteger,
+      destination-id MyInteger,
+      data           MyOctStr
+  }
+
+END
+
