@@ -1,0 +1,5 @@
+SAMRH71-RTEMS-SERIAL-DATAVIEW DEFINITIONS ::= BEGIN
+
+   MyInteger [encoding pos-int, endianness big, size 16]
+
+END
