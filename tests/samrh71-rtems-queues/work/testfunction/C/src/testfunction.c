@@ -34,6 +34,5 @@ void testfunction_PI_test_if( void )
 	// Actual count of received messeges is then 4 + 1.
 	// For more info see https://docs.rtems.org/docs/main/c-user/message/directives.html#rtems-message-queue-send
 	test_result = test_count == QUEUE_SIZE + 1;
+	asm volatile("nop");
 }
-
-
