@@ -1,0 +1,50 @@
+<DeploymentView version="1.2" UiFile="samrh71.ui.xml" creatorHash="383508e" modifierHash="383508e">
+    <Node id="{62da729b-b32f-4be3-aa37-cd217098d586}" name="x86 Linux C++_1" type="ocarina_processors_x86::x86.generic_linux" node_label="Node_2" namespace="ocarina_processors_x86">
+        <Partition id="{a15fc7e7-1428-4378-8348-418cfd41fbb7}" name="Partition_2">
+            <Function id="{6a32c8d5-adec-4504-beaa-b6e793b8ec42}" name="pinger" path="pinger"/>
+        </Partition>
+        <Device id="{19b00dff-ba24-4062-b011-7d54421cb9cb}" name="tcp1" requires_bus_access="ocarina_buses::ip.generic" port="tcp1" asn1file="/home/taste/tool-inst/include/TASTE-Linux-Drivers/configurations/linux-socket-ip-driver.asn" asn1type="Socket-IP-Conf-T" asn1module="LINUX-SOCKET-IP-DRIVER" extends="ocarina_drivers::ip_socket" bus_namespace="ocarina_buses" namespace="ocarina_drivers" impl_extends="ocarina_drivers::ip_socket.linux">
+        </Device>
+        <Device id="{9b85d254-d7fa-410d-9019-1e1bb31ef868}" name="tcp2" requires_bus_access="ocarina_buses::ip.generic" port="tcp2" asn1file="/home/taste/tool-inst/include/TASTE-Linux-Drivers/configurations/linux-socket-ip-driver.asn" asn1type="Socket-IP-Conf-T" asn1module="LINUX-SOCKET-IP-DRIVER" extends="ocarina_drivers::ip_socket" bus_namespace="ocarina_buses" namespace="ocarina_drivers" impl_extends="ocarina_drivers::ip_socket.linux">
+        </Device>
+        <Device id="{73529018-34d8-476c-84cb-63a34e2a90b2}" name="tcp3" requires_bus_access="ocarina_buses::ip.generic" port="tcp3" asn1file="/home/taste/tool-inst/include/TASTE-Linux-Drivers/configurations/linux-socket-ip-driver.asn" asn1type="Socket-IP-Conf-T" asn1module="LINUX-SOCKET-IP-DRIVER" extends="ocarina_drivers::ip_socket" bus_namespace="ocarina_buses" namespace="ocarina_drivers" impl_extends="ocarina_drivers::ip_socket.linux">
+        </Device>
+        <Device id="{83563ba7-346e-4f46-982a-cd34475d795e}" name="tcp4" requires_bus_access="ocarina_buses::ip.generic" port="tcp4" asn1file="/home/taste/tool-inst/include/TASTE-Linux-Drivers/configurations/linux-socket-ip-driver.asn" asn1type="Socket-IP-Conf-T" asn1module="LINUX-SOCKET-IP-DRIVER" extends="ocarina_drivers::ip_socket" bus_namespace="ocarina_buses" namespace="ocarina_drivers" impl_extends="ocarina_drivers::ip_socket.linux">
+        </Device>
+        <Device id="{d23ec0ca-0d98-48d9-8005-a878120d14c5}" name="udp1" requires_bus_access="ocarina_buses::ip.generic" port="udp1" asn1file="/home/taste/tool-inst/include/TASTE-Linux-Drivers/configurations/linux-socket-ip-driver.asn" asn1type="Socket-IP-Conf-T" asn1module="LINUX-SOCKET-IP-DRIVER" extends="ocarina_drivers::udp" bus_namespace="ocarina_buses" namespace="ocarina_drivers" impl_extends="ocarina_drivers::udp.linux">
+        </Device>
+        <Device id="{00c95363-666a-44f7-88f3-84fc93321504}" name="udp2" requires_bus_access="ocarina_buses::ip.generic" port="udp2" asn1file="/home/taste/tool-inst/include/TASTE-Linux-Drivers/configurations/linux-socket-ip-driver.asn" asn1type="Socket-IP-Conf-T" asn1module="LINUX-SOCKET-IP-DRIVER" extends="ocarina_drivers::udp" bus_namespace="ocarina_buses" namespace="ocarina_drivers" impl_extends="ocarina_drivers::udp.linux">
+        </Device>
+        <Device id="{df8e84de-d81e-49bb-8eee-520d7430ae94}" name="udp3" requires_bus_access="ocarina_buses::ip.generic" port="udp3" asn1file="/home/taste/tool-inst/include/TASTE-Linux-Drivers/configurations/linux-socket-ip-driver.asn" asn1type="Socket-IP-Conf-T" asn1module="LINUX-SOCKET-IP-DRIVER" extends="ocarina_drivers::udp" bus_namespace="ocarina_buses" namespace="ocarina_drivers" impl_extends="ocarina_drivers::udp.linux">
+        </Device>
+        <Device id="{eb7ec7f0-34dc-4733-b800-ca1607dc9a5a}" name="udp4" requires_bus_access="ocarina_buses::ip.generic" port="udp4" asn1file="/home/taste/tool-inst/include/TASTE-Linux-Drivers/configurations/linux-socket-ip-driver.asn" asn1type="Socket-IP-Conf-T" asn1module="LINUX-SOCKET-IP-DRIVER" extends="ocarina_drivers::udp" bus_namespace="ocarina_buses" namespace="ocarina_drivers" impl_extends="ocarina_drivers::udp.linux">
+        </Device>
+        <Device id="{688db59f-9b94-4d5a-aa5d-f6af90f32544}" name="uart0" requires_bus_access="ocarina_buses::serial.ccsds" config="{ devname  &quot;./SAMRH71&quot;, speed  b38400, parity  even, bits  8, use-paritybit  FALSE }" port="uart0" asn1file="/home/taste/tool-inst/include/TASTE-Linux-Drivers/configurations/linux-serial-ccsds-driver.asn" asn1type="Serial-CCSDS-Linux-Conf-T" asn1module="LINUX-SERIAL-CCSDS-DRIVER" extends="ocarina_drivers::serial_ccsds" bus_namespace="ocarina_buses" namespace="ocarina_drivers" impl_extends="ocarina_drivers::serial_ccsds.linux">
+        </Device>
+        <Device id="{6d8bd79e-6e5a-4fff-9e8e-b6f4503298e0}" name="uart1" requires_bus_access="ocarina_buses::serial.ccsds" port="uart1" asn1file="/home/taste/tool-inst/include/TASTE-Linux-Drivers/configurations/linux-serial-ccsds-driver.asn" asn1type="Serial-CCSDS-Linux-Conf-T" asn1module="LINUX-SERIAL-CCSDS-DRIVER" extends="ocarina_drivers::serial_ccsds" bus_namespace="ocarina_buses" namespace="ocarina_drivers" impl_extends="ocarina_drivers::serial_ccsds.linux">
+        </Device>
+    </Node>
+    <Node id="{f6f6af51-d46e-4346-bb70-94f2e57ee607}" name="SAM RH71 RTEMS N7S_1" type="ocarina_processors_arm::samrh71.rtems" node_label="Node_1" namespace="ocarina_processors_arm">
+        <Partition id="{22425c3f-b860-4a90-8e60-f8a315edb6d7}" name="Partition_1">
+            <Function id="{8fb412ac-0861-430e-9a47-263184612cac}" name="ponger" path="ponger"/>
+        </Partition>
+        <Device id="{7d89dfb1-0425-4def-95e4-c2d8f570f45d}" name="spw0" requires_bus_access="ocarina_buses::spacewire.generic" port="spw0" asn1file="/home/taste/tool-inst/include/TASTE-SAMRH71-RTEMS-Drivers/configurations/samrh71-rtems-spw-driver.asn" asn1type="Spw-SamRH71-Rtems-Conf-T" asn1module="SAMRH71-RTEMS-SPW-DRIVER" extends="ocarina_drivers::spacewire_generic" bus_namespace="ocarina_buses" namespace="ocarina_drivers" impl_extends="ocarina_drivers::spacewire_generic.samrh71">
+        </Device>
+        <Device id="{aabc30e4-7b29-419b-821f-08fc0c6d14d8}" name="spw1" requires_bus_access="ocarina_buses::spacewire.generic" port="spw1" asn1file="/home/taste/tool-inst/include/TASTE-SAMRH71-RTEMS-Drivers/configurations/samrh71-rtems-spw-driver.asn" asn1type="Spw-SamRH71-Rtems-Conf-T" asn1module="SAMRH71-RTEMS-SPW-DRIVER" extends="ocarina_drivers::spacewire_generic" bus_namespace="ocarina_buses" namespace="ocarina_drivers" impl_extends="ocarina_drivers::spacewire_generic.samrh71">
+        </Device>
+        <Device id="{36605df6-c8c9-4031-9d4c-cac405dec670}" name="uart0" requires_bus_access="ocarina_buses::serial.ccsds" config="{ devname  uart1, speed  b38400, parity  none, transmit-mode  escaped-packets }" port="uart0" asn1file="/home/taste/tool-inst/include/TASTE-SAMRH71-RTEMS-Drivers/configurations/samrh71-rtems-serial-driver.asn" asn1type="Serial-SamRH71-Rtems-Conf-T" asn1module="SAMRH71-RTEMS-SERIAL-DRIVER" extends="ocarina_drivers::serial_ccsds" bus_namespace="ocarina_buses" namespace="ocarina_drivers" impl_extends="ocarina_drivers::serial_ccsds.samrh71">
+        </Device>
+        <Device id="{691398ab-208c-4473-a22c-ef9ba9b9197e}" name="uart1" requires_bus_access="ocarina_buses::serial.ccsds" port="uart1" asn1file="/home/taste/tool-inst/include/TASTE-SAMRH71-RTEMS-Drivers/configurations/samrh71-rtems-serial-driver.asn" asn1type="Serial-SamRH71-Rtems-Conf-T" asn1module="SAMRH71-RTEMS-SERIAL-DRIVER" extends="ocarina_drivers::serial_ccsds" bus_namespace="ocarina_buses" namespace="ocarina_drivers" impl_extends="ocarina_drivers::serial_ccsds.samrh71">
+        </Device>
+        <Device id="{05acb65f-a76d-414d-8625-e70ef49a1f65}" name="uart2" requires_bus_access="ocarina_buses::serial.ccsds" port="uart2" asn1file="/home/taste/tool-inst/include/TASTE-SAMRH71-RTEMS-Drivers/configurations/samrh71-rtems-serial-driver.asn" asn1type="Serial-SamRH71-Rtems-Conf-T" asn1module="SAMRH71-RTEMS-SERIAL-DRIVER" extends="ocarina_drivers::serial_ccsds" bus_namespace="ocarina_buses" namespace="ocarina_drivers" impl_extends="ocarina_drivers::serial_ccsds.samrh71">
+        </Device>
+        <Device id="{30a06e88-580c-4c75-a0ff-fd51b1de7ee8}" name="uart3" requires_bus_access="ocarina_buses::serial.ccsds" port="uart3" asn1file="/home/taste/tool-inst/include/TASTE-SAMRH71-RTEMS-Drivers/configurations/samrh71-rtems-serial-driver.asn" asn1type="Serial-SamRH71-Rtems-Conf-T" asn1module="SAMRH71-RTEMS-SERIAL-DRIVER" extends="ocarina_drivers::serial_ccsds" bus_namespace="ocarina_buses" namespace="ocarina_drivers" impl_extends="ocarina_drivers::serial_ccsds.samrh71">
+        </Device>
+        <Device id="{ab0eb241-1b23-4162-a07a-a08b7860976e}" name="uart4" requires_bus_access="ocarina_buses::serial.ccsds" port="uart4" asn1file="/home/taste/tool-inst/include/TASTE-SAMRH71-RTEMS-Drivers/configurations/samrh71-rtems-serial-driver.asn" asn1type="Serial-SamRH71-Rtems-Conf-T" asn1module="SAMRH71-RTEMS-SERIAL-DRIVER" extends="ocarina_drivers::serial_ccsds" bus_namespace="ocarina_buses" namespace="ocarina_drivers" impl_extends="ocarina_drivers::serial_ccsds.samrh71">
+        </Device>
+    </Node>
+    <Connection id="{fc0e58fd-0e6b-4406-83de-973c18203fa0}" name="Connection_1" from_node="SAM RH71 RTEMS N7S_1" from_port="uart0" to_bus="ocarina_buses::serial.ccsds" to_node="x86 Linux C++_1" to_port="uart0">
+            <Message id="{2e52bb30-0e84-4fca-8202-48344ae7f82e}" name="Message_1" from_function="ponger" from_interface="pong" to_function="pinger" to_interface="pong"/>
+            <Message id="{264bc60a-c2aa-495d-aa42-009279fc63c8}" name="Message_2" from_function="pinger" from_interface="ping" to_function="ponger" to_interface="ping"/>
+    </Connection>
+</DeploymentView>
