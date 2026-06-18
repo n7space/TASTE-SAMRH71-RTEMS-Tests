@@ -1,0 +1,8 @@
+<DeploymentView version="1.2" UiFile="samrh71.ui.xml" creatorHash="383508e" modifierHash="383508e">
+    <Node id="{f638191d-44e7-4af8-aab6-42c1a2f8e0f3}" name="SAM RH71 RTEMS N7S_1" type="ocarina_processors_arm::samrh71.rtems" node_label="Node_1" namespace="ocarina_processors_arm">
+        <Partition id="{dcc30797-c7c6-4d9c-b1e1-527eeab9e2e1}" name="Partition_1">
+            <Function id="{08219c3d-3034-4f43-b873-6146cd8bbbac}" name="testfunction" path="testfunction"/>
+            <Function id="{3632f96b-6bd4-4c54-9c27-814eecf4e7bc}" name="triggerfunction" path="triggerfunction"/>
+        </Partition>
+    </Node>
+</DeploymentView>

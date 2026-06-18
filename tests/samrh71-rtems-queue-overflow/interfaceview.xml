@@ -1,0 +1,39 @@
+<InterfaceView version="1.3" asn1file="samrh71-rtems-queue-overflow.acn" UiFile="interfaceview.ui.xml" modifierHash="383508e">
+<Function id="{22777b77-4aab-4957-95d7-7d948de4d55f}" name="triggerfunction" is_type="NO" language="C" default_implementation="default" fixed_system_element="NO" required_system_element="NO" startup_priority="1" instances_max="1" instances_min="1">
+    <Property name="TASTE_IV_Properties::Default_Codegen" value="Ada"/>
+<Provided_Interface id="{879df6a7-1bb6-4f94-a74b-fcfb1ef9d493}" name="trigger" kind="Cyclic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" dispatch_offset="0" wcet="0" period="100" stack_size="1024" priority="1">
+</Provided_Interface>
+
+<Required_Interface id="{a2e570b3-026c-4e3d-957e-588a5a16635f}" name="sporadic_if" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" wcet="0" stack_size="1024" queue_size="3" miat="0" priority="5">
+    <Input_Parameter name="p1" type="MyInteger" encoding="NATIVE"/>
+    <Property name="Taste::InheritPI" value="true"/>
+    <Property name="Taste::Autonamed" value="true"/>
+</Required_Interface>
+
+    <Implementations>
+        <Implementation name="default" language="C"/>
+    </Implementations>
+</Function>
+
+<Function id="{93dd8bd9-5266-4963-81df-033dcec84819}" name="testfunction" is_type="NO" language="C" default_implementation="default" fixed_system_element="NO" required_system_element="NO" startup_priority="1" instances_max="1" instances_min="1">
+    <Property name="TASTE_IV_Properties::Default_Codegen" value="Ada"/>
+<Provided_Interface id="{1da87547-2f76-4f31-a155-3a2fae6e6eb6}" name="sporadic_if" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" wcet="0" stack_size="1024" queue_size="3" miat="0" priority="5">
+    <Input_Parameter name="p1" type="MyInteger" encoding="NATIVE"/>
+</Provided_Interface>
+
+<Provided_Interface id="{0d09aec8-7514-4033-a39c-8cfef85e65d9}" name="trigger_check" kind="Cyclic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" dispatch_offset="0" wcet="0" period="500" stack_size="1024" priority="1">
+</Provided_Interface>
+
+    <Implementations>
+        <Implementation name="default" language="C"/>
+    </Implementations>
+</Function>
+
+<Connection id="{5e6f09d7-d866-460f-9ce4-9d1ba9caf7d0}" name="triggerfunction_sporadic_if____testfunction_sporadic_if" required_system_element="NO">
+    <Source iface_id="{a2e570b3-026c-4e3d-957e-588a5a16635f}" func_name="triggerfunction" ri_name="sporadic_if" />
+    <Target iface_id="{1da87547-2f76-4f31-a155-3a2fae6e6eb6}" func_name="testfunction" pi_name="sporadic_if" />
+</Connection>
+
+<Layer name="default" is_visible="true"/>
+
+</InterfaceView>
