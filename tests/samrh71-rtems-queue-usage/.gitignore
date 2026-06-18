@@ -4,6 +4,9 @@ work/*
 # Except work/system.asn
 !work/system.asn
 
+# Except work/linker_script
+!work/linker_script
+
 # Ignore qt creator cache directory
 .qtc_clangd
 

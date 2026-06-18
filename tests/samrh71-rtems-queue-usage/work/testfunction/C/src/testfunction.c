@@ -38,6 +38,5 @@ void testfunction_PI_trigger_check(void)
     queue_usage_data[1] = Monitor_GetQueuedItemsCount(function_2_sporadic_if);
 
     test_result = queue_usage_data[0] == 0 && queue_usage_data[1] == 3;
+    asm volatile("nop");
 }
-
-
