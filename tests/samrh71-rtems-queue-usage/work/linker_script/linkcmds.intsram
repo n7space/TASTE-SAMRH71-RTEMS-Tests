@@ -1,0 +1,7 @@
+INCLUDE linkcmds.memory
+
+/* FlexRAM 0x21000000 - 0x210C0000 */
+QUEUE_USAGE_DATA  = 0x210b5000; /* 0x210b6000 - 4096 */
+DEATH_REPORT_BEGIN = 0x210bfc00; /* 0x210C0000 - 1024 */
+
+INCLUDE linkcmds.armv7m
