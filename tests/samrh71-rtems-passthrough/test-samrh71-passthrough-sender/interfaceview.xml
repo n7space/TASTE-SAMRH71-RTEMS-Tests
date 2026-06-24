@@ -1,0 +1,36 @@
+<InterfaceView version="1.3" asn1file="test-samrh71-passthrough-sender.acn" UiFile="interfaceview.ui.xml" modifierHash="383508e">
+<Function id="{c417eed5-cabd-4ee1-bda8-3589d611d505}" name="receiver" is_type="NO" language="C" default_implementation="default" fixed_system_element="NO" required_system_element="NO" instances_max="1" instances_min="1" startup_priority="1">
+    <Property name="TASTE_IV_Properties::Default_Codegen" value="Ada"/>
+<Provided_Interface id="{990183e8-77bd-43d4-a3f6-33363c049897}" name="TC" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" wcet="0" miat="0" stack_size="1024" priority="1" queue_size="1">
+    <Input_Parameter name="p1" type="MySeq" encoding="ACN"/>
+</Provided_Interface>
+
+    <Implementations>
+        <Implementation name="default" language="C"/>
+    </Implementations>
+</Function>
+
+<Function id="{ae662f73-aa9d-40af-9838-149c348e88c1}" name="sender" is_type="NO" language="C" default_implementation="default" fixed_system_element="NO" required_system_element="NO" instances_max="1" instances_min="1" startup_priority="1">
+    <Property name="TASTE_IV_Properties::Default_Codegen" value="Ada"/>
+<Provided_Interface id="{4a6c6bc5-c5a6-4555-8351-30765654f36f}" name="trigger" kind="Cyclic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" wcet="0" stack_size="1024" period="500" priority="1">
+</Provided_Interface>
+
+<Required_Interface id="{1550e909-14a0-44d6-8249-d1ff0866c240}" name="TC" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" wcet="0" miat="0" stack_size="1024" priority="1" queue_size="1">
+    <Input_Parameter name="p1" type="MySeq" encoding="ACN"/>
+    <Property name="Taste::InheritPI" value="true"/>
+    <Property name="Taste::Autonamed" value="true"/>
+</Required_Interface>
+
+    <Implementations>
+        <Implementation name="default" language="C"/>
+    </Implementations>
+</Function>
+
+<Connection id="{bb44e1ec-568f-46ee-a1a3-033707cf89e3}" name="sender_TC____receiver_TC" required_system_element="NO">
+    <Source iface_id="{1550e909-14a0-44d6-8249-d1ff0866c240}" func_name="sender" ri_name="TC" />
+    <Target iface_id="{990183e8-77bd-43d4-a3f6-33363c049897}" func_name="receiver" pi_name="TC" />
+</Connection>
+
+<Layer name="default" is_visible="true"/>
+
+</InterfaceView>
