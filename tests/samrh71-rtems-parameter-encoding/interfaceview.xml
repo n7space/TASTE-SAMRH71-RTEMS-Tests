@@ -1,0 +1,88 @@
+<InterfaceView version="1.3" asn1file="samrh71-rtems-parameter-encoding.acn" UiFile="interfaceview.ui.xml" modifierHash="383508e">
+<Function id="{8f93a7d9-fdab-4822-b07e-98d4da0531ac}" name="triggerfunction" is_type="NO" language="C" default_implementation="default" fixed_system_element="NO" required_system_element="NO" startup_priority="1" instances_min="1" instances_max="1">
+    <Property name="TASTE_IV_Properties::Default_Codegen" value="Ada"/>
+<Provided_Interface id="{9c1d110b-e6c5-4286-9f21-2d4e941dbf77}" name="trigger" kind="Cyclic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" priority="1" wcet="0" stack_size="1024" period="100">
+</Provided_Interface>
+
+<Required_Interface id="{57e019ba-a430-48de-9622-f3adbb5f3518}" name="sporadic_if" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" miat="0" queue_size="1" priority="1" wcet="0" stack_size="1024">
+    <Input_Parameter name="p1" type="MySeq" encoding="NATIVE"/>
+    <Property name="Taste::InheritPI" value="true"/>
+    <Property name="Taste::Autonamed" value="true"/>
+</Required_Interface>
+
+<Required_Interface id="{ec7efbb7-e5e6-47b9-b1ae-46c54805f2d4}" name="protected_if" kind="Protected" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" wcet="0">
+    <Input_Parameter name="p1" type="MyInteger" encoding="NATIVE"/>
+    <Input_Parameter name="p2" type="MySeq" encoding="NATIVE"/>
+    <Property name="Taste::InheritPI" value="true"/>
+    <Property name="Taste::Autonamed" value="true"/>
+</Required_Interface>
+
+<Required_Interface id="{063e7025-bec9-4001-b1ce-d28c6cebd808}" name="sporadic_acn_if" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" wcet="0">
+    <Input_Parameter name="p1" type="MySeq" encoding="ACN"/>
+    <Property name="Taste::InheritPI" value="true"/>
+    <Property name="Taste::Autonamed" value="true"/>
+</Required_Interface>
+
+<Required_Interface id="{d3acbf02-653c-417c-9235-739b6ae4d91b}" name="protected_acn_if" kind="Protected" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" wcet="0">
+    <Input_Parameter name="p1" type="MyInteger" encoding="ACN"/>
+    <Input_Parameter name="p2" type="MySeq" encoding="ACN"/>
+    <Property name="Taste::InheritPI" value="true"/>
+    <Property name="Taste::Autonamed" value="true"/>
+</Required_Interface>
+
+    <Implementations>
+        <Implementation name="default" language="C"/>
+    </Implementations>
+</Function>
+
+<Function id="{f5e8f4a0-7c0a-4095-bf27-f00bde1060ba}" name="testfunction" is_type="NO" language="C" default_implementation="default" fixed_system_element="NO" required_system_element="NO" startup_priority="1" instances_min="1" instances_max="1">
+    <Property name="TASTE_IV_Properties::Default_Codegen" value="Ada"/>
+<Provided_Interface id="{2acb69a5-3d8d-4dcf-a65e-63febbce52e9}" name="trigger_check" kind="Cyclic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" priority="1" wcet="0" stack_size="1024" period="500">
+</Provided_Interface>
+
+<Provided_Interface id="{f9875133-f9ed-4aec-b4d2-59838d333e28}" name="sporadic_if" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" miat="0" queue_size="1" priority="1" wcet="0" stack_size="1024">
+    <Input_Parameter name="p1" type="MySeq" encoding="NATIVE"/>
+</Provided_Interface>
+
+<Provided_Interface id="{051b5b69-4217-4845-aad4-e093eae369d1}" name="protected_if" kind="Protected" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" wcet="0">
+    <Input_Parameter name="p1" type="MyInteger" encoding="NATIVE"/>
+    <Input_Parameter name="p2" type="MySeq" encoding="NATIVE"/>
+</Provided_Interface>
+
+<Provided_Interface id="{3abb93db-fc67-4ba2-a2d0-4bb02519f610}" name="sporadic_acn_if" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" wcet="0">
+    <Input_Parameter name="p1" type="MySeq" encoding="ACN"/>
+</Provided_Interface>
+
+<Provided_Interface id="{c7e3c4a0-10de-4af3-b554-dc091ffd08dc}" name="protected_acn_if" kind="Protected" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" wcet="0">
+    <Input_Parameter name="p1" type="MyInteger" encoding="ACN"/>
+    <Input_Parameter name="p2" type="MySeq" encoding="ACN"/>
+</Provided_Interface>
+
+    <Implementations>
+        <Implementation name="default" language="C"/>
+    </Implementations>
+</Function>
+
+<Connection id="{eb4daf25-2dad-4899-9e9b-f08faff30a9e}" name="triggerfunction_protected_if____testfunction_protected_if" required_system_element="NO">
+    <Source iface_id="{ec7efbb7-e5e6-47b9-b1ae-46c54805f2d4}" func_name="triggerfunction" ri_name="protected_if" />
+    <Target iface_id="{051b5b69-4217-4845-aad4-e093eae369d1}" func_name="testfunction" pi_name="protected_if" />
+</Connection>
+
+<Connection id="{b9da24db-8d84-4ba7-8b59-11a064587457}" name="triggerfunction_protected_acn_if____testfunction_protected_acn_if" required_system_element="NO">
+    <Source iface_id="{d3acbf02-653c-417c-9235-739b6ae4d91b}" func_name="triggerfunction" ri_name="protected_acn_if" />
+    <Target iface_id="{c7e3c4a0-10de-4af3-b554-dc091ffd08dc}" func_name="testfunction" pi_name="protected_acn_if" />
+</Connection>
+
+<Connection id="{dac408fd-4630-43bb-8f28-71344118c709}" name="triggerfunction_sporadic_if____testfunction_sporadic_if" required_system_element="NO">
+    <Source iface_id="{57e019ba-a430-48de-9622-f3adbb5f3518}" func_name="triggerfunction" ri_name="sporadic_if" />
+    <Target iface_id="{f9875133-f9ed-4aec-b4d2-59838d333e28}" func_name="testfunction" pi_name="sporadic_if" />
+</Connection>
+
+<Connection id="{6b007afd-042d-4ae7-924d-3b2d41a19d8f}" name="triggerfunction_sporadic_acn_if____testfunction_sporadic_acn_if" required_system_element="NO">
+    <Source iface_id="{063e7025-bec9-4001-b1ce-d28c6cebd808}" func_name="triggerfunction" ri_name="sporadic_acn_if" />
+    <Target iface_id="{3abb93db-fc67-4ba2-a2d0-4bb02519f610}" func_name="testfunction" pi_name="sporadic_acn_if" />
+</Connection>
+
+<Layer name="default" is_visible="true"/>
+
+</InterfaceView>
