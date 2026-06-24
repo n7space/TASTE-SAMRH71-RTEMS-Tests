@@ -1,0 +1,35 @@
+# Ignore whole work directory
+work/*
+
+# Except work/system.asn
+!work/system.asn
+
+# Ignore qt creator cache directory
+.qtc_clangd
+
+# Ignore qt creator user files
+*.pro.user*
+
+# Ignore aadl files
+*.aadl
+
+# Ignore msc files
+*.msc
+
+# Except SENDER source files
+!work/sender
+work/sender/*
+!work/sender/C
+work/sender/C/*
+!work/sender/C/src
+work/sender/C/src/*
+!work/sender/C/src/sender.c
+
+# Except RECEIVER source files
+!work/receiver
+work/receiver/*
+!work/receiver/C
+work/receiver/C/*
+!work/receiver/C/src
+work/receiver/C/src/*
+!work/receiver/C/src/receiver.c
