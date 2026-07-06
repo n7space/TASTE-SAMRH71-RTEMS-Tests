@@ -1,0 +1,15 @@
+SAMRH71-RTEMS-CAN-ESCAPER-DATAVIEW DEFINITIONS ::=
+BEGIN
+
+   MyInteger ::= INTEGER (0 .. 10000)
+
+   LargeMessage ::= SEQUENCE {
+      a MyInteger,
+      b MyInteger,
+      c MyInteger,
+      d MyInteger,
+      e MyInteger
+   }
+
+END
+
