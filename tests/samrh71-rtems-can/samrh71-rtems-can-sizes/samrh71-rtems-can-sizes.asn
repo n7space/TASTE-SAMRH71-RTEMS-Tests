@@ -34,7 +34,7 @@ BEGIN
 -- message needs to be processed by Escaper, which is not supported together with address=application-control-can-id option.
 -- If address=application-control-can-id was not selected, the type exchanged using a CAN port will be handled
 -- in line with standard TASTE semantics, with proper escaping and segmentation, supporting large message sizes.
-   Raw-Can-Frame ::= OCTET STRING (SIZE(8))
+   Raw-Can-Frame ::= OCTET STRING (SIZE(12))
 
 END
 

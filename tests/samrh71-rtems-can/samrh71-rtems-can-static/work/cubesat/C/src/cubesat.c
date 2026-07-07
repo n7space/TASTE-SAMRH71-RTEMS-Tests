@@ -33,4 +33,7 @@ void cubesat_PI_trigger(void)
 
 void cubesat_PI_dummy_answer_large( const asn1SccLargeMessage * IN_p1)
 {
+    // this for dummy interface with large parameter to verify
+    // if the presence of large message on different (non-CAN) bus
+    // does not impact behaviour of can driver.
 }

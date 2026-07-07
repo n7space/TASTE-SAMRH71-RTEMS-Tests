@@ -8,8 +8,6 @@
     !! file. The up-to-date signatures can be found in the header file. !!
 */
 #include "cubesat.h"
-//#include <stdio.h>
-
 
 void cubesat_startup(void)
 {
@@ -30,5 +28,3 @@ void cubesat_PI_ping
     }
     cubesat_RI_pong(&frame);
 }
-
-
