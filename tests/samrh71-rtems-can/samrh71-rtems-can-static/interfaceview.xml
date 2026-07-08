@@ -1,0 +1,84 @@
+<InterfaceView version="1.3" asn1file="samrh71-rtems-can-static.acn" UiFile="interfaceview.ui.xml" modifierHash="383508e">
+<Function id="{a4742b7b-a37b-4ed0-a516-c123b63a9cc3}" name="cubesat" is_type="NO" language="C" default_implementation="default" fixed_system_element="NO" required_system_element="NO" startup_priority="1" instances_max="1" instances_min="1">
+    <Property name="TASTE_IV_Properties::Default_Codegen" value="Ada"/>
+<Provided_Interface id="{5cb40ad0-d9f1-4f6f-83a7-3e7d02989844}" name="trigger" kind="Cyclic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" priority="1" stack_size="1024" wcet="0">
+</Provided_Interface>
+
+<Provided_Interface id="{05006fb2-60b5-457d-bc15-d85d57f6b628}" name="alive" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" priority="1" queue_size="1" miat="0" stack_size="1024" wcet="0">
+    <Input_Parameter name="testparam" type="MyInteger" encoding="ACN"/>
+</Provided_Interface>
+
+<Provided_Interface id="{df8b0324-0dbf-44bf-8177-600b110433ac}" name="dummy_answer_large" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" priority="1" queue_size="1" miat="0" stack_size="1024" wcet="0">
+    <Input_Parameter name="p1" type="LargeMessage" encoding="ACN"/>
+</Provided_Interface>
+
+<Required_Interface id="{4453436e-e143-4624-8479-7ba38234a4da}" name="ping" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" priority="1" queue_size="1" miat="0" stack_size="1024" wcet="0">
+    <Input_Parameter name="p1" type="MyInteger" encoding="ACN"/>
+    <Property name="Taste::InheritPI" value="true"/>
+    <Property name="Taste::Autonamed" value="true"/>
+</Required_Interface>
+
+<Required_Interface id="{2e2155d5-e2df-4477-8db8-f686c31970b8}" name="dummy_large" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" priority="1" queue_size="1" miat="0" stack_size="1024" wcet="0">
+    <Input_Parameter name="p1" type="LargeMessage" encoding="ACN"/>
+    <Property name="Taste::InheritPI" value="true"/>
+    <Property name="Taste::Autonamed" value="true"/>
+</Required_Interface>
+
+    <Implementations>
+        <Implementation name="default" language="C"/>
+    </Implementations>
+</Function>
+
+<Function id="{696d0f9c-1161-475f-b786-14dc8352f991}" name="dummy" is_type="NO" language="C" default_implementation="default" fixed_system_element="NO" required_system_element="NO" startup_priority="1" instances_max="1" instances_min="1">
+    <Property name="TASTE_IV_Properties::Default_Codegen" value="Ada"/>
+<Provided_Interface id="{ca31d4ef-0ccc-44ae-a06c-783e0c3da9ad}" name="trigger" kind="Cyclic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" priority="1" stack_size="1024" wcet="0">
+</Provided_Interface>
+
+<Provided_Interface id="{e2d1706a-d768-4a65-ad92-26dfb72d2df1}" name="ping" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" priority="1" queue_size="1" miat="0" stack_size="1024" wcet="0">
+    <Input_Parameter name="p1" type="MyInteger" encoding="ACN"/>
+</Provided_Interface>
+
+<Provided_Interface id="{390f122d-0f76-42d2-a67b-73ee1469ebf3}" name="dummy_large" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" priority="1" queue_size="1" miat="0" stack_size="1024" wcet="0">
+    <Input_Parameter name="p1" type="LargeMessage" encoding="ACN"/>
+</Provided_Interface>
+
+<Required_Interface id="{a491c29f-d65c-4667-9326-667e3626c865}" name="alive" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" priority="1" queue_size="1" miat="0" stack_size="1024" wcet="0">
+    <Input_Parameter name="testparam" type="MyInteger" encoding="ACN"/>
+    <Property name="Taste::InheritPI" value="true"/>
+    <Property name="Taste::Autonamed" value="true"/>
+</Required_Interface>
+
+<Required_Interface id="{09021ce2-79ff-4708-953f-6010186cc8d5}" name="dummy_answer_large" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" priority="1" queue_size="1" miat="0" stack_size="1024" wcet="0">
+    <Input_Parameter name="p1" type="LargeMessage" encoding="ACN"/>
+    <Property name="Taste::InheritPI" value="true"/>
+    <Property name="Taste::Autonamed" value="true"/>
+</Required_Interface>
+
+    <Implementations>
+        <Implementation name="default" language="C"/>
+    </Implementations>
+</Function>
+
+<Connection id="{0b37cb4c-514d-4ced-8991-ee973988fe79}" name="dummy_alive____cubesat_alive" required_system_element="NO">
+    <Source iface_id="{a491c29f-d65c-4667-9326-667e3626c865}" func_name="dummy" ri_name="alive" />
+    <Target iface_id="{05006fb2-60b5-457d-bc15-d85d57f6b628}" func_name="cubesat" pi_name="alive" />
+</Connection>
+
+<Connection id="{c77915c1-6833-499d-9a91-01865ad7a796}" name="cubesat_ping____dummy_ping" required_system_element="NO">
+    <Source iface_id="{4453436e-e143-4624-8479-7ba38234a4da}" func_name="cubesat" ri_name="ping" />
+    <Target iface_id="{e2d1706a-d768-4a65-ad92-26dfb72d2df1}" func_name="dummy" pi_name="ping" />
+</Connection>
+
+<Connection id="{317bed9e-cda1-4ebe-90d0-d119a0fdabbe}" name="dummy_dummy_answer_large____cubesat_dummy_answer_large" required_system_element="NO">
+    <Source iface_id="{09021ce2-79ff-4708-953f-6010186cc8d5}" func_name="dummy" ri_name="dummy_answer_large" />
+    <Target iface_id="{df8b0324-0dbf-44bf-8177-600b110433ac}" func_name="cubesat" pi_name="dummy_answer_large" />
+</Connection>
+
+<Connection id="{1a56b5a6-2bbf-4b25-bb11-950db5d0dc1b}" name="cubesat_dummy_large____dummy_dummy_large" required_system_element="NO">
+    <Source iface_id="{2e2155d5-e2df-4477-8db8-f686c31970b8}" func_name="cubesat" ri_name="dummy_large" />
+    <Target iface_id="{390f122d-0f76-42d2-a67b-73ee1469ebf3}" func_name="dummy" pi_name="dummy_large" />
+</Connection>
+
+<Layer name="default" is_visible="true"/>
+
+</InterfaceView>

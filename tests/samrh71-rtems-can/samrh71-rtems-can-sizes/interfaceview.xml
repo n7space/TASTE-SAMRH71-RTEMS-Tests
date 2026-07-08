@@ -1,0 +1,88 @@
+<InterfaceView version="1.3" asn1file="samrh71-rtems-can-sizes.acn" UiFile="interfaceview.ui.xml" modifierHash="383508e">
+<Function id="{5fa1852b-8eb1-4e45-9e6b-33919e9361bd}" name="adapter" is_type="NO" language="Blackbox_C" default_implementation="default" fixed_system_element="NO" required_system_element="NO" startup_priority="1" instances_min="1" instances_max="1">
+    <Property name="TASTE_IV_Properties::Default_Codegen" value="Ada"/>
+<Provided_Interface id="{f90930d9-974f-43d7-b92a-3cc240ea3033}" name="pong" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" queue_size="1" wcet="0" stack_size="1024" priority="1" miat="0">
+    <Input_Parameter name="frame" type="Can-Frame" encoding="NATIVE"/>
+</Provided_Interface>
+
+<Provided_Interface id="{e1f5609a-d702-4719-aebe-4be681747d0d}" name="receive_can_frame" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" queue_size="1" wcet="0" stack_size="1024" priority="1" miat="0">
+    <Input_Parameter name="frame" type="Raw-Can-Frame" encoding="ACN"/>
+</Provided_Interface>
+
+<Required_Interface id="{5420675b-ba48-4324-a293-706bffbf56e1}" name="ping" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" queue_size="1" wcet="0" stack_size="1024" priority="1" miat="0">
+    <Input_Parameter name="frame" type="Can-Frame" encoding="NATIVE"/>
+    <Property name="Taste::InheritPI" value="true"/>
+    <Property name="Taste::Autonamed" value="true"/>
+</Required_Interface>
+
+<Required_Interface id="{3bd1a679-9cd8-44b8-90da-ccdf5cd95227}" name="send_can_frame" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" queue_size="1" wcet="0" stack_size="1024" priority="1" miat="0">
+    <Input_Parameter name="frame" type="Raw-Can-Frame" encoding="ACN"/>
+    <Property name="Taste::InheritPI" value="true"/>
+    <Property name="Taste::Autonamed" value="true"/>
+</Required_Interface>
+
+    <Implementations>
+        <Implementation name="default" language="Blackbox_C"/>
+    </Implementations>
+</Function>
+
+<Function id="{ae5aff18-6792-44f6-9de7-04dc733ccc0e}" name="cubesat" is_type="NO" language="C" default_implementation="default" fixed_system_element="NO" required_system_element="NO" startup_priority="1" instances_min="1" instances_max="1">
+    <Property name="TASTE_IV_Properties::Default_Codegen" value="Ada"/>
+<Provided_Interface id="{fe45d3c8-28c6-4f40-8dc0-766167f9340e}" name="ping" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" queue_size="1" wcet="0" stack_size="1024" priority="1" miat="0">
+    <Input_Parameter name="frame" type="Can-Frame" encoding="NATIVE"/>
+</Provided_Interface>
+
+<Required_Interface id="{2c8e3a88-e75c-4405-824a-648cf0b35b80}" name="pong" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" queue_size="1" wcet="0" stack_size="1024" priority="1" miat="0">
+    <Input_Parameter name="frame" type="Can-Frame" encoding="NATIVE"/>
+    <Property name="Taste::InheritPI" value="true"/>
+    <Property name="Taste::Autonamed" value="true"/>
+</Required_Interface>
+
+    <Implementations>
+        <Implementation name="default" language="C"/>
+    </Implementations>
+</Function>
+
+<Function id="{54e66cfb-dae1-4485-8945-db6b866ef7a6}" name="dummy" is_type="NO" language="C" default_implementation="default" fixed_system_element="NO" required_system_element="NO" startup_priority="1" instances_min="1" instances_max="1">
+    <Property name="TASTE_IV_Properties::Default_Codegen" value="Ada"/>
+<Provided_Interface id="{e6cd20c3-1af3-4fa7-b438-e7ba29aa806e}" name="send_can_frame" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" queue_size="1" wcet="0" stack_size="1024" priority="1" miat="0">
+    <Input_Parameter name="frame" type="Raw-Can-Frame" encoding="ACN"/>
+</Provided_Interface>
+
+<Required_Interface id="{2abcfe4d-0977-499f-82d6-f41924c09581}" name="receive_can_frame" kind="Sporadic" enable_multicast="true" layer="default" required_system_element="NO" is_simulink_interface="false" queue_size="1" wcet="0" stack_size="1024" priority="1" miat="0">
+    <Input_Parameter name="frame" type="Raw-Can-Frame" encoding="ACN"/>
+    <Property name="Taste::InheritPI" value="true"/>
+    <Property name="Taste::Autonamed" value="true"/>
+</Required_Interface>
+
+    <Implementations>
+        <Implementation name="default" language="C"/>
+    </Implementations>
+</Function>
+
+<Connection id="{c3184b30-6c1c-489e-947c-bf216ca96298}" name="dummy_receive_can_frame____adapter_receive_can_frame" required_system_element="NO">
+    <Source iface_id="{2abcfe4d-0977-499f-82d6-f41924c09581}" func_name="dummy" ri_name="receive_can_frame" />
+    <Target iface_id="{e1f5609a-d702-4719-aebe-4be681747d0d}" func_name="adapter" pi_name="receive_can_frame" />
+</Connection>
+
+<Connection id="{05033a4d-0abc-4707-a5ee-9c11ab5719bb}" name="adapter_send_can_frame____dummy_send_can_frame" required_system_element="NO">
+    <Source iface_id="{3bd1a679-9cd8-44b8-90da-ccdf5cd95227}" func_name="adapter" ri_name="send_can_frame" />
+    <Target iface_id="{e6cd20c3-1af3-4fa7-b438-e7ba29aa806e}" func_name="dummy" pi_name="send_can_frame" />
+</Connection>
+
+<Connection id="{1828ce4b-11ef-4bc1-8373-2306eaeb87d6}" name="cubesat_pong____adapter_pong" required_system_element="NO">
+    <Source iface_id="{2c8e3a88-e75c-4405-824a-648cf0b35b80}" func_name="cubesat" ri_name="pong" />
+    <Target iface_id="{f90930d9-974f-43d7-b92a-3cc240ea3033}" func_name="adapter" pi_name="pong" />
+</Connection>
+
+<Connection id="{2b726ccd-a2a3-428f-a9bf-8e0176cd250a}" name="adapter_ping____cubesat_ping" required_system_element="NO">
+    <Source iface_id="{5420675b-ba48-4324-a293-706bffbf56e1}" func_name="adapter" ri_name="ping" />
+    <Target iface_id="{fe45d3c8-28c6-4f40-8dc0-766167f9340e}" func_name="cubesat" pi_name="ping" />
+</Connection>
+
+<Comment id="{8c0453a9-be4e-4399-94de-0fd0a8967f37}" name="This project is a reference of application which needs to operate on ASN.1 defined can frames.\nThe application, represented here as cubesat, uses Can-Frame datatype defined in ASN.1.\nTo make it possible, the application needs a special function implemented as a Blackbox C, which is called adapter here.\nThe whole purpose of adapter is to convert Can-Frame into a data buffer or back.\n\n\nCan driver has configuration option: address - application-control-can-id\npacketizer is set to: passthrough\n\nThis demonstrates a special mode of the CAN driver designed to handle low-level protocols\n\nsuch as CAN-TS or CANopen" required_system_element="NO">
+</Comment>
+
+<Layer name="default" is_visible="true"/>
+
+</InterfaceView>

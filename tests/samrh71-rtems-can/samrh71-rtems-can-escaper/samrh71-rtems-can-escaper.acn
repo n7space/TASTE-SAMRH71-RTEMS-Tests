@@ -1,0 +1,6 @@
+SAMRH71-RTEMS-CAN-ESCAPER-DATAVIEW DEFINITIONS ::= BEGIN
+
+   MyInteger [encoding pos-int, endianness big, size 16]
+
+END
+
