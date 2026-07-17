@@ -1,6 +1,6 @@
 # samrh71-rtems-bsw
 
-This is the project for to test if the TASTE-SAMX-RTEMS-Runtime can be executed from flash, without any BSW.
+This is the project for testing if the TASTE-SAMX-RTEMS-Runtime can be executed from flash, without any BSW.
 
 ## Test steps
 
