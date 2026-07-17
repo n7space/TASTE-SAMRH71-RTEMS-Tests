@@ -1,0 +1,54 @@
+/* CIF PROCESS (250, 150), (150, 75) */
+/* CIF Keep Specific Geode _REQSERVER_ 'https://gitlab.esa.int/taste/demo' */
+process Pinger;
+    /* CIF Keep Specific Geode Partition 'default' */
+    /* CIF TEXT (241, 229), (172, 140) */
+    dcl param MyInteger := 0;
+    dcl testparam MyInteger;
+    /* CIF ENDTEXT */
+    /* CIF START (431, 0), (70, 35) */
+    START;
+        /* CIF NEXTSTATE (431, 50), (70, 35) */
+        NEXTSTATE Wait;
+    /* CIF state (23, 313), (70, 35) */
+    /* CIF Keep Specific Geode Partition 'default' */
+    state Wait;
+        /* CIF input (0, 368), (116, 35) */
+        input dbg(testparam);
+            /* CIF NEXTSTATE (23, 423), (70, 35) */
+            NEXTSTATE Wait;
+    endstate;
+    /* CIF state (1125, 290), (70, 35) */
+    /* CIF Keep Specific Geode Partition 'default' */
+    state Wait;
+        /* CIF input (1098, 345), (123, 35) */
+        input pong(testparam);
+            /* CIF PROCEDURECALL (1055, 400), (208, 35) */
+            call writeln('Got pong ', testparam);
+            /* CIF NEXTSTATE (1124, 455), (70, 35) */
+            NEXTSTATE Wait;
+    endstate;
+    /* CIF state (680, 223), (70, 35) */
+    /* CIF Keep Specific Geode Partition 'default' */
+    state Wait;
+        /* CIF input (680, 278), (70, 35) */
+        input trigger;
+            /* CIF output (667, 333), (95, 35) */
+            output ping(param);
+            /* CIF PROCEDURECALL (623, 388), (184, 35) */
+            call writeln('Sent ping ', param);
+            /* CIF decision (674, 443), (81, 50) */
+            decision param = 9;
+                /* CIF ANSWER (604, 513), (70, 23) */
+                (true):
+                    /* CIF task (597, 556), (84, 35) */
+                    task param := 0;
+                /* CIF ANSWER (725, 513), (70, 23) */
+                (false):
+                    /* CIF task (692, 556), (135, 35) */
+                    task param := param + 1;
+            enddecision;
+            /* CIF NEXTSTATE (680, 607), (70, 35) */
+            NEXTSTATE Wait;
+    endstate;
+endprocess Pinger;
