@@ -1,6 +1,24 @@
 INCLUDE linkcmds.memory
 
+/*
+ * Booting order:
+ * Start address is in the flash - it is the RTEMS code.
+ * RTEMS executes startup hooks, one of the hooks copies REGION_DATA, REGION_FAST_DATA from flash to sram,
+ * and zeroes REGION_BSS. (hook is a part of TASTE-RTEMS-ARM-QDP).
+ * RTEMS performs early CPU initialization, this is a generic code shared by other ARM CPUs.
+ * RTEMS prepares interrupt vector (see comment about REGION_VECTOR for more information).
+ * RTEMS starts Init task.
+ * The Init task configures Pmc (using Hal from TASTE-SAMX-RTEMS-Runtime) and initializes FaultHandler.
+ * FaultHandler reconfigures interrupt vector.
+ */
+
 REGION_ALIAS ("REGION_START", INTFLASH);
+/*
+ * The interrupt vector shall be placed in SRAM.
+ * RTEMS, at boot, copies content of the bsp_start_vector_table (stored in flash),
+ * to REGION_VECTOR. Flash is not writable, at least without additional configuration, hence
+ * REGION_VECTOR shall be an alias for INTSRAM.
+ */
 REGION_ALIAS ("REGION_VECTOR", INTSRAM);
 REGION_ALIAS ("REGION_TEXT", INTFLASH);
 REGION_ALIAS ("REGION_TEXT_LOAD", INTFLASH);
@@ -12,11 +30,11 @@ REGION_ALIAS ("REGION_FAST_TEXT", ITCM);
 REGION_ALIAS ("REGION_FAST_TEXT_LOAD", INTFLASH);
 REGION_ALIAS ("REGION_FAST_DATA", INTSRAM);
 REGION_ALIAS ("REGION_FAST_DATA_LOAD", INTFLASH);
-REGION_ALIAS ("REGION_BSS", INTSRAM); /* ????? */
-REGION_ALIAS ("REGION_WORK", INTSRAM); /* ????? */
-REGION_ALIAS ("REGION_STACK", INTSRAM); /* ????? */
-REGION_ALIAS ("REGION_NOCACHE", NOCACHE); /* ????? */
-REGION_ALIAS ("REGION_NOCACHE_LOAD", INTFLASH); /* ????? */
+REGION_ALIAS ("REGION_BSS", INTSRAM);
+REGION_ALIAS ("REGION_WORK", INTSRAM);
+REGION_ALIAS ("REGION_STACK", INTSRAM);
+REGION_ALIAS ("REGION_NOCACHE", NOCACHE);
+REGION_ALIAS ("REGION_NOCACHE_LOAD", INTFLASH);
 
 /* FlexRAM 0x21000000 - 0x210C0000 */
 DEATH_REPORT_BEGIN = 0x210bfc00; /* 0x210C0000 - 1024 */
