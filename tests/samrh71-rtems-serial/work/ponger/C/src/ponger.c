@@ -18,5 +18,3 @@ void ponger_PI_ping
 {
     ponger_RI_pong(IN_testparam);
 }
-
-

@@ -1,4 +1,5 @@
-<UI version="1.0" ><Entity id="{79c5ea78-364d-4412-a263-280758e24ee1}"><Taste coordinates="100000 33000 116000 74000">
+<UI version="1.0" ><Entity id="{e389e86f-e2dd-4b8e-9881-299bfc401157}">
+</Entity><Entity id="{79c5ea78-364d-4412-a263-280758e24ee1}"><Taste coordinates="100000 33000 116000 74000">
 </Taste>
 </Entity><Entity id="{bb783fe8-f234-4009-8242-b3d8fc3d748a}"><Taste coordinates="102200 35600 113800 43600">
 </Taste>
@@ -21,16 +22,6 @@
 </Taste>
 </Entity><Entity id="{815667f8-b11b-48e6-9d9a-1bb3ca366572}"><Taste coordinates="104100 33000">
 </Taste>
-</Entity><Entity id="{0c09caac-3816-4713-8182-a33a1690335d}">
-</Entity><Entity id="{e4f35a93-f8a1-4964-a76e-fa21e5cda2e4}">
-</Entity><Entity id="{db850acb-eb52-4f7f-87f3-58e43aecae76}"><Taste coordinates="49000 47100 49000 60000 99000 60000">
-</Taste>
-</Entity><Entity id="{b19887b5-01ec-4a25-931b-9c88aca36730}">
-</Entity><Entity id="{8c43d436-66dc-403c-a6dd-988eb1180a8f}">
-</Entity><Entity id="{7c0090f5-6760-48ea-b33d-0481019ff2a8}"><Taste coordinates="99000 52000 74600 52000 74600 40000 50200 40000">
-</Taste>
-</Entity><Entity id="{6e964ae5-f659-4eac-8b2c-0a8eab32db65}">
-</Entity><Entity id="{340ba560-0325-4149-9b0d-5a8294ab76c2}">
 </Entity><Entity id="{e4b859b7-6f72-4ec1-ae62-52ee8065a209}"><Taste coordinates="33200 30100 49200 46100">
 </Taste>
 </Entity><Entity id="{46703a94-4eb0-486f-aa89-7252e81941e9}">
@@ -46,5 +37,14 @@
 </Entity><Entity id="{4adfdb6e-2ba1-4be1-ad37-01071c05cf00}"><Taste coordinates="49000 52000">
 </Taste>
 </Entity><Entity id="{ad6609b2-7f89-41b3-b47a-389f99508b81}">
+</Entity><Entity id="{7c0090f5-6760-48ea-b33d-0481019ff2a8}"><Taste coordinates="99000 52000 74600 52000 74600 40000 50200 40000">
+</Taste>
+</Entity><Entity id="{6e964ae5-f659-4eac-8b2c-0a8eab32db65}">
+</Entity><Entity id="{340ba560-0325-4149-9b0d-5a8294ab76c2}">
+</Entity><Entity id="{db850acb-eb52-4f7f-87f3-58e43aecae76}"><Taste coordinates="49000 47100 49000 60000 99000 60000">
+</Taste>
+</Entity><Entity id="{b19887b5-01ec-4a25-931b-9c88aca36730}">
+</Entity><Entity id="{8c43d436-66dc-403c-a6dd-988eb1180a8f}">
+</Entity><Entity id="{486b97b1-9238-4c17-852f-c6a8a7bc8ebc}">
 </Entity>
 </UI>
